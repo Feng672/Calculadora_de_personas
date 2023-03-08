@@ -7,7 +7,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class CalculatorApplication extends Application {
+    /**
+     * Función que abre la interfaz gráfica
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(CalculatorApplication.class.getResource("calculator-view.fxml"));
@@ -16,6 +22,10 @@ public class CalculatorApplication extends Application {
         stage.show();
     }
 
+    /**
+     * Método main() de la aplicación
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
     }

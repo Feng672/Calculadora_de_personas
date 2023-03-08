@@ -12,13 +12,17 @@ import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class CalculatorController implements Initializable {
+    /**
+     * Serie de variables globales para las distintas funciones
+     */
     Persona objeto;
     Persona objeto2;
     Persona objeto3;
     Persona objeto4;
-
     Integer n = 1;
+
     @FXML
     private ComboBox<String> cbPersona1;
 
@@ -37,6 +41,10 @@ public class CalculatorController implements Initializable {
     @FXML
     private TextField tfNombre;
 
+    /**
+     * Cuando el botón es presionado comenzará una serie de if para validar la información requerida y la información que se acepta se almacena en una clase como una nueva instancia y se agrega a los combo box de operaciones
+     * @param event
+     */
     @FXML
     void btnAgregarPersonas(ActionEvent event) {
         if (tfEdad.getText() != null && tfEdad.getText().matches("[0-9]+") == false){
@@ -74,6 +82,10 @@ public class CalculatorController implements Initializable {
         }
     }
 
+    /**
+     * Botón que al ser presionado realiza la división entre las edades de las personas seleccionadas o muestra un cuadro de texto de que hay algún campo vacío
+     * @param event
+     */
     @FXML
     void btnDividir(ActionEvent event) {
         Boolean Estado1 = false;
@@ -147,6 +159,10 @@ public class CalculatorController implements Initializable {
 
     }
 
+    /**
+     * Botón que al ser presionado multiplica las edades de las personas seleccionadas o muestra un cuadro de texto de que hay algún campo vacío
+     * @param event
+     */
     @FXML
     void btnMultiplicar(ActionEvent event) {
         Boolean Estado1 = false;
@@ -218,6 +234,10 @@ public class CalculatorController implements Initializable {
         lResultado.setText("Resultado: " + z);
     }
 
+    /**
+     * Botón que al ser presionado sirve para restar las edades de las personas seleccionadas o mostrar un cuadro de texto mencionando que hay algún campo vacío
+     * @param event
+     */
     @FXML
     void btnRestar(ActionEvent event) {
         Boolean Estado1 = false;
@@ -289,6 +309,10 @@ public class CalculatorController implements Initializable {
         lResultado.setText("Resultado: " + z);
     }
 
+    /**
+     * Botón que al ser presionada suma las edades de las personas seleccionadas o muestra un cuadro de texto mencionando de que hay algún campo vacío
+     * @param event
+     */
     @FXML
     void btnSumar(ActionEvent event) {
         Boolean Estado1 = false;
@@ -360,6 +384,11 @@ public class CalculatorController implements Initializable {
         lResultado.setText("Resultado: " + z);
     }
 
+    /**
+     * Provee al combo box las 7 provincias que el usuario podrá elegir
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cbProvincia.setItems(FXCollections.observableArrayList("Cartago","San José","Alajuela","Limón","Heredia","Puntarenas","Guanacaste"));
