@@ -39,7 +39,10 @@ public class CalculatorController implements Initializable {
 
     @FXML
     void btnAgregarPersonas(ActionEvent event) {
-        if(tfEdad.getText() == null || tfNombre.getText() == null || cbProvincia.getValue() == null) {
+        if (tfEdad.getText() != null && tfEdad.getText().matches("[0-9]+") == false){
+            JFrame jFrame = new JFrame();
+            JOptionPane.showMessageDialog(jFrame, "Solo se permiten enteros en el campo de edad");
+        }else if(tfEdad.getText() == null || tfNombre.getText() == null || cbProvincia.getValue() == null) {
             JFrame jFrame = new JFrame();
             JOptionPane.showMessageDialog(jFrame, "Faltan datos");
         }else if (n==1) {
